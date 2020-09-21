@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-toolbar color= "primary">
+  <ion-toolbar color="tertiary">
     <ion-button slot="end" fill="clear" (click)="presentActionSheet()">
       <ion-icon style="color:aliceblue" name="menu"></ion-icon>
     </ion-button>
@@ -20,7 +20,8 @@
           
           <br>
           <ion-label class="ion-text-center" color="primary">
-            <H2 class="ion-text-center">Clima Mundial</H2>
+            <H1 class="ion-text-center">Clima Mundial</H1>
+            <H2 class="ion-text-center">Clima País 1</H2>
           </ion-label>
           <form (submit)="submitLocation(cityName, countryCode)">
             <div class="form-group">
@@ -29,8 +30,7 @@
             <div class="form-group">
               <input type="hidden" value= "593" disabled class="form-control" placeholder="Codigo del pais" #countryCode>
             </div>
-            <button color="secundary" class="btn btn-primary btn-block  mt-2">Obtener Clima</button>
-            <button color="secundary" class="btn btn-primary btn-block  mt-2" onClick="window.location.reload()">Nueva Consulta</button>
+            <button class="btn btn-primary btn-block  mt-2"> Obtener Clima </button>
           </form>
         </div>
       </div>
@@ -48,7 +48,196 @@
           <p>Tipo de clima: {{weather.weather[0].description}}</p>
         </div>
       </div>
+      
+    </div>
+    
+    <div class="row">
+      <div class="col-md-6">
+        <div card class="card-body">
+          <ion-label class="ion-text-center" color="primary">
+            <H2 class="ion-text-center">Clima País 2</H2>
+          </ion-label>
+          <form (submit)="submitLocation2(cityName2, countryCode2)">
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="Nombre de la Ciudad" #cityName2>
+            </div>
+            <div class="form-group">
+              <input type="hidden" value= "593" disabled class="form-control" placeholder="Codigo del pais" #countryCode2>
+            </div>
+            <button class="btn btn-primary btn-block  mt-2"> Obtener Clima </button>
+          </form>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div *ngIf="weather2" class="card card-body">
+          <p>Ciudad: {{weather2.name}}</p>
+          <p>Temperatura: {{weather2.main.temp}} °C</p>
+          <p>Temperatura max: {{weather2.main.temp_max}} °C</p>
+          <p>Temperatura min: {{weather2.main.temp_min}} °C</p>
+          <p>Latitud: {{weather2.coord.lat}}</p>
+          <p>Longitud: {{weather2.coord.lon}}</p>
+          <p>Humedad: {{weather2.main.humidity}}</p>
+          <p>Presión: {{weather2.main.pressure}}</p>
+          <p>Tipo de clima: {{weather2.weather[0].description}}</p>
+
+
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-6">
+        <div card class="card-body">
+          <ion-label class="ion-text-center" color="primary">
+            <H2 class="ion-text-center">Clima País 3</H2>
+          </ion-label>
+          <form (submit)="submitLocation3(cityName3, countryCode3)">
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="Nombre de la Ciudad" #cityName3>
+            </div>
+            <div class="form-group">
+              <input type="hidden" value= "593" disabled class="form-control" placeholder="Codigo del pais" #countryCode3>
+            </div>
+            <button class="btn btn-primary btn-block  mt-2"> Obtener Clima </button>
+          </form>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div *ngIf="weather3" class="card card-body">
+          <p>Ciudad: {{weather3.name}}</p>
+          <p>Temperatura: {{weather3.main.temp}} °C</p>
+          <p>Temperatura max: {{weather3.main.temp_max}} °C</p>
+          <p>Temperatura min: {{weather3.main.temp_min}} °C</p>
+          <p>Latitud: {{weather3.coord.lat}}</p>
+          <p>Longitud: {{weather3.coord.lon}}</p>
+          <p>Humedad: {{weather3.main.humidity}}</p>
+          <p>Presión: {{weather3.main.pressure}}</p>
+          <p>Tipo de clima: {{weather3.weather[0].description}}</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-6">
+        <div card class="card-body">
+          <ion-label class="ion-text-center" color="primary">
+            <H2 class="ion-text-center">Clima País 4</H2>
+          </ion-label>
+          <form (submit)="submitLocation4(cityName4, countryCode4)">
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="Nombre de la Ciudad" #cityName4>
+            </div>
+            <div class="form-group">
+              <input type="hidden" value= "593" disabled class="form-control" placeholder="Codigo del pais" #countryCode4>
+            </div>
+            <button class="btn btn-primary btn-block  mt-2"> Obtener Clima </button>
+            
+          </form>
+        </div>
+      </div>
+      <h3>Lunes</h3>
+      <div class="col-md-6">
+        <div *ngIf="weather4" class="card card-body">
+          <p>Ciudad: {{weather4.name}}</p>
+          <p>Temperatura: {{weather4.main.temp}} °C</p>
+          <p>Temperatura max: {{weather4.main.temp_max}} °C</p>
+          <p>Temperatura min: {{weather4.main.temp_min}} °C</p>
+          <p>Latitud: {{weather4.coord.lat}}</p>
+          <p>Longitud: {{weather4.coord.lon}}</p>
+          <p>Humedad: {{weather4.main.humidity}}</p>
+          <p>Presión: {{weather4.main.pressure}}</p>
+          <p>Tipo de clima: {{weather4.weather[0].description}}</p>
+        </div>
+      </div>
+      <h3>Martes</h3>
+      <div class="col-md-6">
+        <div *ngIf="weather" class="card card-body">
+          <p>Ciudad: {{weather4.name}}</p>
+          <p>Temperatura: {{weather.main.temp}} °C</p>
+          <p>Temperatura max: {{weather.main.temp_max}} °C</p>
+          <p>Temperatura min: {{weather.main.temp_min}} °C</p>
+          <p>Latitud: {{weather4.coord.lat}}</p>
+          <p>Longitud: {{weather4.coord.lon}}</p>
+          <p>Humedad: {{weather.main.humidity}}</p>
+          <p>Presión: {{weather.main.pressure}}</p>
+          <p>Tipo de clima: {{weather.weather[0].description}}</p>
+        </div>
+      </div>
+      <h3>Miercoles</h3>
+      <div class="col-md-6">
+        <div *ngIf="weather2" class="card card-body">
+          <p>Ciudad: {{weather4.name}}</p>
+          <p>Temperatura: {{weather4.main.temp}} °C</p>
+          <p>Temperatura max: {{weather2.main.temp_max}} °C</p>
+          <p>Temperatura min: {{weather2.main.temp_min}} °C</p>
+          <p>Latitud: {{weather4.coord.lat}}</p>
+          <p>Longitud: {{weather4.coord.lon}}</p>
+          <p>Humedad: {{weather2.main.humidity}}</p>
+          <p>Presión: {{weather2.main.pressure}}</p>
+          <p>Tipo de clima: {{weather2.weather[0].description}}</p>
+        </div>
+      </div>
+      <h3>Jueves</h3>
+      <div class="col-md-6">
+        <div *ngIf="weather3" class="card card-body">
+          <p>Ciudad: {{weather4.name}}</p>
+          <p>Temperatura: {{weather3.main.temp}} °C</p>
+          <p>Temperatura max: {{weather3.main.temp_max}} °C</p>
+          <p>Temperatura min: {{weather3.main.temp_min}} °C</p>
+          <p>Latitud: {{weather4.coord.lat}}</p>
+          <p>Longitud: {{weather4.coord.lon}}</p>
+          <p>Humedad: {{weather3.main.humidity}}</p>
+          <p>Presión: {{weather3.main.pressure}}</p>
+          <p>Tipo de clima: {{weather3.weather[0].description}}</p>
+        </div>
+      </div>
+      <h3>Viernes</h3>
+      <div class="col-md-6">
+        <div *ngIf="weather4" class="card card-body">
+          <p>Ciudad: {{weather4.name}}</p>
+          <p>Temperatura: {{weather4.main.temp}} °C</p>
+          <p>Temperatura max: {{weather4.main.temp_max}} °C</p>
+          <p>Temperatura min: {{weather4.main.temp_min}} °C</p>
+          <p>Latitud: {{weather4.coord.lat}}</p>
+          <p>Longitud: {{weather4.coord.lon}}</p>
+          <p>Humedad: {{weather4.main.humidity}}</p>
+          <p>Presión: {{weather4.main.pressure}}</p>
+          <p>Tipo de clima: {{weather4.weather[0].description}}</p>
+        </div>
+      </div>
+      <h3>Sábado</h3>
+      <div class="col-md-6">
+        <div *ngIf="weather3" class="card card-body">
+          <p>Ciudad: {{weather4.name}}</p>
+          <p>Temperatura: {{weather3.main.temp}} °C</p>
+          <p>Temperatura max: {{weather2.main.temp_max}} °C</p>
+          <p>Temperatura min: {{weather.main.temp_min}} °C</p>
+          <p>Latitud: {{weather4.coord.lat}}</p>
+          <p>Longitud: {{weather4.coord.lon}}</p>
+          <p>Humedad: {{weather.main.humidity}}</p>
+          <p>Presión: {{weather2.main.pressure}}</p>
+          <p>Tipo de clima: {{weather3.weather[0].description}}</p>
+        </div>
+      </div>
+      <h3>Domingo</h3>
+      <div class="col-md-6">
+        <div *ngIf="weather2" class="card card-body">
+          <p>Ciudad: {{weather4.name}}</p>
+          <p>Temperatura: {{weather2.main.temp}} °C</p>
+          <p>Temperatura max: {{weather.main.temp_max}} °C</p>
+          <p>Temperatura min: {{weather3.main.temp_min}} °C</p>
+          <p>Latitud: {{weather4.coord.lat}}</p>
+          <p>Longitud: {{weather4.coord.lon}}</p>
+          <p>Humedad: {{weather3.main.humidity}}</p>
+          <p>Presión: {{weather2.main.pressure}}</p>
+          <p>Tipo de clima: {{weather.weather[0].description}}</p>
+        </div>
+      </div>
+      <button color="secundary" class="btn btn-primary btn-block  mt-2" onClick="window.location.reload()">Nueva Consulta</button>
     </div>
   </div>
 
 </ion-content>
+
