@@ -37,4 +37,4 @@ Desarrollar una app que consuma el API REST de una fuente de clima y muestre el 
 <br> 
 <br>• Link Pantalla Admin Angular https://github.com/CarlosIsma/ExamenTopicos-Angular
 <br>• Link App Ionic https://github.com/Dianisss/ProyectoFinal-Topicos
-<br>• Link Youtube video explicativo 
+<br>• Link Youtube video explicativo https://youtu.be/IzpmY2kte10
